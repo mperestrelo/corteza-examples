@@ -27,7 +27,7 @@ Headers:
 
 JSON Body:
 
-{
+`{
   "stepID": "4",  
   "trace": false,
   "wait": false,
@@ -43,7 +43,7 @@ JSON Body:
               "@Type": "Array"
             }
     }
-}
+}`
 
 
 * Note that it is necessary to escape the JSON so that it parses correctly in Corteza, otherwise issues.
