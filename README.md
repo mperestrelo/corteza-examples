@@ -34,12 +34,20 @@ JSON Body:
   "async": false,
   "input": {              
         "request":         
-            { "@Value": ["{\"quoteId\": \"339723775660654693\",\"packId\": \"339722786862006373\",\"iv_unique_code\":\"Commission\",\"iv_installment\":\"O\",\"iv_value\": \"7.99\",\"iv_desc\":\"PrimaAnualComisioBruta\",\"DeltaKey\":\"top_TripCancellationCost.c3000\",\"iv_name\":\"Commission\",\"iv_value_type\":\"commission\",\"iv_value_basis\":\"gross\"}",
-                "{\"quoteId\": \"339558683325400757\",\"packId\": \"339722786862006373\",\"iv_unique_code\":\"IRPF\",\"iv_installment\":\"O\",\"iv_value\": \"0.10\",\"iv_desc\":\"Comissio\",\"DeltaKey\":\"top_TripCancellationCost.c3000\",\"iv_name\":\"IRPF\",\"iv_value_type\":\"tax\",\"iv_value_basis\":\"gross\"}",
-                "{\"quoteId\": \"339723775660654693\",\"packId\": \"339722786862006373\",\"iv_unique_code\":\"Commission\",\"iv_installment\":\"O\",\"iv_value\": \"7.99\",\"iv_desc\":\"PrimaAnualComisioBruta\",\"DeltaKey\":\"top_TripCancellationCost.c3000\",\"iv_name\":\"Commission\",\"iv_value_type\":\"commission\",\"iv_value_basis\":\"gross\"}",
-                "{\"quoteId\": \"339723775660654693\",\"packId\": \"339722786862006373\",\"iv_unique_code\":\"Commission\",\"iv_installment\":\"O\",\"iv_value\": \"7.99\",\"iv_desc\":\"PrimaAnualComisioBruta\",\"DeltaKey\":\"top_TripCancellationCost.c3000\",\"iv_name\":\"Commission\",\"iv_value_type\":\"commission\",\"iv_value_basis\":\"gross\"}",
-                "{\"quoteId\": \"339723775660654693\",\"packId\": \"339722786862006373\",\"iv_unique_code\":\"Commission\",\"iv_installment\":\"O\",\"iv_value\": \"7.99\",\"iv_desc\":\"PrimaAnualComisioBruta\",\"DeltaKey\":\"top_TripCancellationCost.c3000\",\"iv_name\":\"Commission\",\"iv_value_type\":\"commission\",\"iv_value_basis\":\"gross\"}",
-                "{\"quoteId\": \"339723775660654693\",\"packId\": \"339722786862006373\",\"iv_unique_code\":\"Commission\",\"iv_installment\":\"O\",\"iv_value\": \"7.99\",\"iv_desc\":\"PrimaAnualComisioBruta\",\"DeltaKey\":\"top_TripCancellationCost.c3000\",\"iv_name\":\"Commission\",\"iv_value_type\":\"commission\",\"iv_value_basis\":\"gross\"}"],
+            { "@Value": 
+            
+            ["{\"quoteId\": \"339723775660654693\",\"packId\": \"339722786862006373\",\"iv_unique_code\":\"Commission\",\"iv_installment\":\"O\",\"iv_value\": \"7.99\",\"iv_desc\":\"PrimaAnualComisioBruta\",\"DeltaKey\":\"top_TripCancellationCost.c3000\",\"iv_name\":\"Commission\",\"iv_value_type\":\"commission\",\"iv_value_basis\":\"gross\"}",
+                
+             "{\"quoteId\": \"339558683325400757\",\"packId\": \"339722786862006373\",\"iv_unique_code\":\"IRPF\",\"iv_installment\":\"O\",\"iv_value\": \"0.10\",\"iv_desc\":\"Comissio\",\"DeltaKey\":\"top_TripCancellationCost.c3000\",\"iv_name\":\"IRPF\",\"iv_value_type\":\"tax\",\"iv_value_basis\":\"gross\"}",
+                
+             "{\"quoteId\": \"339723775660654693\",\"packId\": \"339722786862006373\",\"iv_unique_code\":\"Commission\",\"iv_installment\":\"O\",\"iv_value\": \"7.99\",\"iv_desc\":\"PrimaAnualComisioBruta\",\"DeltaKey\":\"top_TripCancellationCost.c3000\",\"iv_name\":\"Commission\",\"iv_value_type\":\"commission\",\"iv_value_basis\":\"gross\"}",
+                
+             "{\"quoteId\": \"339723775660654693\",\"packId\": \"339722786862006373\",\"iv_unique_code\":\"Commission\",\"iv_installment\":\"O\",\"iv_value\": \"7.99\",\"iv_desc\":\"PrimaAnualComisioBruta\",\"DeltaKey\":\"top_TripCancellationCost.c3000\",\"iv_name\":\"Commission\",\"iv_value_type\":\"commission\",\"iv_value_basis\":\"gross\"}",
+                
+             "{\"quoteId\": \"339723775660654693\",\"packId\": \"339722786862006373\",\"iv_unique_code\":\"Commission\",\"iv_installment\":\"O\",\"iv_value\": \"7.99\",\"iv_desc\":\"PrimaAnualComisioBruta\",\"DeltaKey\":\"top_TripCancellationCost.c3000\",\"iv_name\":\"Commission\",\"iv_value_type\":\"commission\",\"iv_value_basis\":\"gross\"}",
+                
+             "{\"quoteId\": \"339723775660654693\",\"packId\": \"339722786862006373\",\"iv_unique_code\":\"Commission\",\"iv_installment\":\"O\",\"iv_value\": \"7.99\",\"iv_desc\":\"PrimaAnualComisioBruta\",\"DeltaKey\":\"top_TripCancellationCost.c3000\",\"iv_name\":\"Commission\",\"iv_value_type\":\"commission\",\"iv_value_basis\":\"gross\"}"],
+                
               "@Type": "Array"
             }
     }
