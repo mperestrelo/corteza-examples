@@ -50,9 +50,9 @@ JSON Body:
 
 This post request invokes the workflow with the ID 339721397272051813 on step 4, once you create it in your system the ID will be different (easy to find, open the workflow and check the ID in the URL BAR)
 
-The workflow called write_to_queue [write to queue](write_to_queue.png) is invoked and the array passed. It processes each item and writes a json string to a queue called QuoteLineUpdates
+The workflow called write_to_queue ![write to queue](write_to_queue.png) is invoked and the array passed. It processes each item and writes a json string to a queue called QuoteLineUpdates
 
-On the otherside, workflow called [consumer](consumer.png) picksup each string from the queue and with JSON.parse(input) obtain a json representation.
+On the otherside, workflow called ![consumer](consumer.png) picksup each string from the queue and with JSON.parse(input) obtain a json representation.
 
 You can import the workflows directly:
 * [Write to queue](https://github.com/mperestrelo/corteza-examples/blob/main/WriteToQueue.json)
