@@ -4,11 +4,15 @@ Examples for corteza use cases
 
 Here are some use case examples for Corteza
 
+0. Create a queue
+
+![Queue](https://github.com/mperestrelo/corteza-examples/blob/main/queue.png)
+
 1. Invoking an external workflow to write to a queue (with consumptions by a second workflow)
 
-* The write to queue is invoked by an external http request, like so:
+* The write to queue  is invoked by an external http request, like so:
 
-Step 1. Obtain a login token (see login png) and stored JWT token (I am using postman, so save it to context - i.e. in tests I place this:
+Step 1. Obtain a ![login token](![Queue](https://github.com/mperestrelo/corteza-examples/blob/main/login.png))  and store JWT token (I am using postman, so save it to context - i.e. in tests I place this:
 
 var jsonData = JSON.parse(responseBody);
 postman.setGlobalVariable("access_token", jsonData.access_token);
@@ -18,6 +22,7 @@ Step 2. Post to the workflow which writes to the queue
 POST http://localhost:808/automation/workflows/339721397272051813/exec
 
 Headers:
+- Content-Type: application/x-www-form-urlencoded
 - Authorization (your Corteza login token)
 
 JSON Body:
