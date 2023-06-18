@@ -1,0 +1,412 @@
+{
+  "workflows": [
+    {
+      "handle": "Consumer",
+      "enabled": true,
+      "meta": {
+        "name": "Consumer",
+        "description": "",
+        "visual": null
+      },
+      "keepSessions": 0,
+      "steps": [
+        {
+          "stepID": "6",
+          "kind": "termination",
+          "ref": "",
+          "arguments": null,
+          "results": [],
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "defaultName": true,
+              "id": "6",
+              "parent": "1",
+              "value": "Terminate workflow execution",
+              "xywh": [
+                2712,
+                2256,
+                200,
+                80
+              ]
+            }
+          }
+        },
+        {
+          "stepID": "37",
+          "kind": "expressions",
+          "ref": "",
+          "arguments": [
+            {
+              "target": "data",
+              "expr": "json",
+              "type": "Vars"
+            }
+          ],
+          "results": [],
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "defaultName": true,
+              "id": "37",
+              "parent": "1",
+              "value": "Define and mutate scope variables",
+              "xywh": [
+                2064,
+                2240,
+                200,
+                80
+              ]
+            }
+          }
+        },
+        {
+          "stepID": "53",
+          "kind": "function",
+          "ref": "composeRecordsNew",
+          "arguments": [
+            {
+              "target": "module",
+              "value": "QuoteLine",
+              "type": "Handle"
+            },
+            {
+              "target": "namespace",
+              "value": "Wallet",
+              "type": "Handle"
+            }
+          ],
+          "results": [
+            {
+              "target": "NewRecord",
+              "expr": "record",
+              "type": "ComposeRecord"
+            }
+          ],
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "defaultName": true,
+              "id": "53",
+              "parent": "1",
+              "value": "Compose record maker",
+              "xywh": [
+                2320,
+                2400,
+                200,
+                80
+              ]
+            }
+          }
+        },
+        {
+          "stepID": "54",
+          "kind": "function",
+          "ref": "composeRecordsCreate",
+          "arguments": [
+            {
+              "target": "record",
+              "expr": "NewRecord",
+              "type": "ComposeRecord"
+            }
+          ],
+          "results": [
+            {
+              "target": "UpdateRecord",
+              "expr": "record",
+              "type": "ComposeRecord"
+            }
+          ],
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "defaultName": true,
+              "id": "54",
+              "parent": "1",
+              "value": "Compose record create",
+              "xywh": [
+                2312,
+                2656,
+                200,
+                80
+              ]
+            }
+          }
+        },
+        {
+          "stepID": "55",
+          "kind": "function",
+          "ref": "composeRecordsUpdate",
+          "arguments": [
+            {
+              "target": "record",
+              "expr": "UpdateRecord",
+              "type": "ComposeRecord"
+            }
+          ],
+          "results": [],
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "defaultName": true,
+              "id": "55",
+              "parent": "1",
+              "value": "Compose record update",
+              "xywh": [
+                2312,
+                2792,
+                200,
+                80
+              ]
+            }
+          }
+        },
+        {
+          "stepID": "56",
+          "kind": "expressions",
+          "ref": "",
+          "arguments": [
+            {
+              "target": "NewRecord.values.QuoteId",
+              "expr": "data[\"quoteId\"]",
+              "type": "ID"
+            },
+            {
+              "target": "NewRecord.values.PackId",
+              "expr": "data[\"packId\"]",
+              "type": "ID"
+            },
+            {
+              "target": "NewRecord.values.iv_unique_code",
+              "expr": "data[\"iv_unique_code\"]",
+              "type": "String"
+            },
+            {
+              "target": "NewRecord.values.iv_installment",
+              "expr": "data[\"iv_installment\"]",
+              "type": "String"
+            },
+            {
+              "target": "NewRecord.values.iv_value",
+              "expr": "data[\"iv_value\"]",
+              "type": "Float"
+            },
+            {
+              "target": "NewRecord.values.iv_desc",
+              "expr": "data[\"iv_desc\"]",
+              "type": "String"
+            },
+            {
+              "target": "NewRecord.values.DeltaKey",
+              "expr": "data[\"DeltaKey\"]",
+              "type": "String"
+            },
+            {
+              "target": "NewRecord.values.iv_name",
+              "expr": "data[\"iv_name\"]",
+              "type": "String"
+            },
+            {
+              "target": "NewRecord.values.iv_value_type",
+              "expr": "data[\"iv_value_type\"]",
+              "type": "String"
+            },
+            {
+              "target": "NewRecord.values.iv_value_basis",
+              "expr": "data[\"iv_value_basis\"]",
+              "type": "String"
+            }
+          ],
+          "results": [],
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "defaultName": true,
+              "id": "56",
+              "parent": "1",
+              "value": "Define and mutate scope variables",
+              "xywh": [
+                2312,
+                2520,
+                200,
+                80
+              ]
+            }
+          }
+        },
+        {
+          "stepID": "94",
+          "kind": "function",
+          "ref": "jsenvExecute",
+          "arguments": [
+            {
+              "target": "scope",
+              "expr": "payload.Payload",
+              "type": "Any"
+            },
+            {
+              "target": "source",
+              "value": "return JSON.parse(input)",
+              "type": "String"
+            }
+          ],
+          "results": [
+            {
+              "target": "json",
+              "expr": "resultAny",
+              "type": "Any"
+            }
+          ],
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "defaultName": true,
+              "id": "94",
+              "parent": "1",
+              "value": "Process arbitrary data in jsenv",
+              "xywh": [
+                1960,
+                2096,
+                200,
+                80
+              ]
+            }
+          }
+        }
+      ],
+      "paths": [
+        {
+          "parentID": "54",
+          "childID": "6",
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "id": "61",
+              "parent": "1",
+              "points": [],
+              "style": "exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;",
+              "value": null
+            }
+          }
+        },
+        {
+          "parentID": "53",
+          "childID": "56",
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "id": "66",
+              "parent": "1",
+              "points": [],
+              "style": "exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;",
+              "value": null
+            }
+          }
+        },
+        {
+          "parentID": "56",
+          "childID": "54",
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "id": "67",
+              "parent": "1",
+              "points": [],
+              "style": "exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;",
+              "value": null
+            }
+          }
+        },
+        {
+          "parentID": "94",
+          "childID": "37",
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "id": "96",
+              "parent": "1",
+              "points": [],
+              "style": "exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;",
+              "value": null
+            }
+          }
+        },
+        {
+          "parentID": "37",
+          "childID": "53",
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "id": "98",
+              "parent": "1",
+              "points": [],
+              "style": "exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;",
+              "value": null
+            }
+          }
+        }
+      ],
+      "triggers": [
+        {
+          "resourceType": "system:queue",
+          "eventType": "onMessage",
+          "constraints": [
+            {
+              "name": "payload.queue",
+              "op": "=",
+              "values": [
+                "QuoteLineUpdates"
+              ]
+            }
+          ],
+          "enabled": true,
+          "stepID": "94",
+          "meta": {
+            "description": "",
+            "visual": {
+              "defaultName": true,
+              "edges": [
+                {
+                  "childID": "94",
+                  "meta": {
+                    "description": "",
+                    "label": "",
+                    "visual": {
+                      "id": "95",
+                      "parent": "1",
+                      "points": [],
+                      "style": "exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;",
+                      "value": null
+                    }
+                  },
+                  "parentID": "3"
+                }
+              ],
+              "id": "3",
+              "parent": "1",
+              "value": "System queue - onMessage",
+              "xywh": [
+                1840,
+                1896,
+                200,
+                80
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

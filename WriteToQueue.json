@@ -1,0 +1,189 @@
+{
+  "workflows": [
+    {
+      "handle": "WriteToQueue",
+      "enabled": true,
+      "meta": {
+        "name": "WriteToQueue",
+        "description": "Write strings to a queue based on an array",
+        "visual": null
+      },
+      "keepSessions": 0,
+      "steps": [
+        {
+          "stepID": "4",
+          "kind": "iterator",
+          "ref": "loopEach",
+          "arguments": [
+            {
+              "target": "items",
+              "expr": "request",
+              "type": "Array"
+            }
+          ],
+          "results": [
+            {
+              "target": "item",
+              "expr": "item",
+              "type": "Any"
+            }
+          ],
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "defaultName": true,
+              "id": "4",
+              "parent": "1",
+              "value": "Items",
+              "xywh": [
+                2400,
+                2016,
+                200,
+                80
+              ]
+            }
+          }
+        },
+        {
+          "stepID": "6",
+          "kind": "function",
+          "ref": "queueWrite",
+          "arguments": [
+            {
+              "target": "payload",
+              "expr": "item",
+              "type": "String"
+            },
+            {
+              "target": "queue",
+              "value": "QuoteLineUpdates",
+              "type": "String"
+            }
+          ],
+          "results": [],
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "defaultName": true,
+              "id": "6",
+              "parent": "1",
+              "value": "Queue message send",
+              "xywh": [
+                2400,
+                2176,
+                200,
+                80
+              ]
+            }
+          }
+        },
+        {
+          "stepID": "7",
+          "kind": "termination",
+          "ref": "",
+          "arguments": null,
+          "results": [],
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "defaultName": true,
+              "id": "7",
+              "parent": "1",
+              "value": "Terminate workflow execution",
+              "xywh": [
+                2744,
+                2016,
+                200,
+                80
+              ]
+            }
+          }
+        }
+      ],
+      "paths": [
+        {
+          "parentID": "4",
+          "childID": "6",
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "id": "9",
+              "parent": "1",
+              "points": null,
+              "style": "exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;",
+              "value": "Body"
+            }
+          }
+        },
+        {
+          "parentID": "4",
+          "childID": "7",
+          "meta": {
+            "name": "",
+            "description": "",
+            "visual": {
+              "id": "10",
+              "parent": "1",
+              "points": null,
+              "style": "exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;",
+              "value": "End"
+            }
+          }
+        }
+      ],
+      "triggers": [
+        {
+          "resourceType": "system",
+          "eventType": "onManual",
+          "constraints": [
+            {
+              "name": "",
+              "op": "=",
+              "values": [
+                ""
+              ]
+            }
+          ],
+          "enabled": true,
+          "stepID": "4",
+          "meta": {
+            "description": "",
+            "visual": {
+              "defaultName": true,
+              "edges": [
+                {
+                  "childID": "4",
+                  "meta": {
+                    "description": "",
+                    "label": "",
+                    "visual": {
+                      "id": "5",
+                      "parent": "1",
+                      "points": null,
+                      "style": "exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;",
+                      "value": null
+                    }
+                  },
+                  "parentID": "3"
+                }
+              ],
+              "id": "3",
+              "parent": "1",
+              "value": "System - onManual",
+              "xywh": [
+                2064,
+                2016,
+                200,
+                80
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
