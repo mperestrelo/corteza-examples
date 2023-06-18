@@ -52,3 +52,8 @@ On the otherside, workflow called [consumer](consumer.png) picksup each string f
 You can import the workflows directly:
 * [Write to queue](https://github.com/mperestrelo/corteza-examples/blob/main/WriteToQueue.json)
 * [Consumer](https://github.com/mperestrelo/corteza-examples/blob/main/Consumer.json)
+
+
+
+Note that:
+* Depending on what record you want to create you will need to customize the namespace and module handles etc
